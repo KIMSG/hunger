@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="shortcut icon" href="images/favicon.ico" /> -->
+  <link rel="stylesheet" href="css/stuck.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/touchTouch.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery-migrate-1.1.1.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/superfish.js"></script>
+  <script src="js/jquery.equalheights.js"></script>
+  <script src="js/jquery.mobilemenu.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/tmStickUp.js"></script>
+  <script src="js/jquery.ui.totop.js"></script>
+  <script src="js/touchTouch.jquery.js"></script>
+  <link href="dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+  <script src="dist/js/datepicker.min.js"></script>
+  <!-- Include English language -->
+  <script src="dist/js/i18n/datepicker.en.js"></script>
+  <!-- update the version number as needed -->
+  <script defer src="/__/firebase/4.1.3/firebase-app.js"></script>
+  <!-- include only the Firebase features as you need -->
+  <script defer src="/__/firebase/4.1.3/firebase-auth.js"></script>
+  <script defer src="/__/firebase/4.1.3/firebase-database.js"></script>
+  <script defer src="/__/firebase/4.1.3/firebase-messaging.js"></script>
+  <script defer src="/__/firebase/4.1.3/firebase-storage.js"></script>
+  <!-- initialize the SDK after all desired features are loaded -->
+  <script defer src="/__/firebase/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "",
+      authDomain: "hunger-480af.firebaseapp.com",
+      databaseURL: "https://hunger-480af.firebaseio.com",
+      projectId: "hunger-480af",
+      storageBucket: "hunger-480af.appspot.com",
+      messagingSenderId: "76067318543"
+    };
+    firebase.initializeApp(config);
+
+    $(document).ready(function() {
+
+      $().UItoTop({
+        easingType: 'easeOutQuart'
+      });
+      $('#stuck_container').tmStickUp({});
+      $('.gallery .gall_item').touchTouch();
+
+      monthlyCal();
+
+    });
+
+    function fnstoreReg(){
+        var today = $("#visitDate").text();
+        var store = $('input[name=store]').val();
+        console.log(today);
+        console.log(store);
+
+        firebase.database().ref('VisitStoreList/'+today+'/').set({
+            VisitStore : store
+        });
+    }
+
+    function initMap() {
+      var lat = 37.5243459;
+      var lng = 126.8552417;
+
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: eval(lat),
+          lng: eval(lng)
+        },
+        zoom: 17
+      });
+
+    }
+
+    function monthlyCal(){
+      var eventDates = [1],
+      $picker = $('#custom-cells'),
+      $content = $('#custom-cells-events'),
+      sentences = ['111111'];
+
+      $picker.datepicker({
+          language: 'en',
+          dateFormat: 'yyyy/mm/dd',
+          onRenderCell: function (date, cellType) {
+              var currentDate = date.getDate();
+              // Add extra element, if `eventDates` contains `currentDate`
+              if (cellType == 'day' && eventDates.indexOf(currentDate) != -1) {
+                  return {
+                      html: currentDate + '<span class="dp-note"></span>'
+                  }
+              }
+          },
+          onSelect: function onSelect(fd, date) {
+              var title = "", content = ''
+              // If date with event is selected, show it
+              if (date && eventDates.indexOf(date.getDate()) != -1) {
+                  title = fd;
+                  content = sentences[Math.floor(Math.random() * eventDates.length)];
+              }else {
+                  title = fd;
+                  content = '<input type="text" name="store"> <a onClick="fnstoreReg(); return false;">입력</a>';
+              }
+              $('strong', $content).html(title)  //날짜
+              $('p', $content).html(content)     //내용
+          }
+      })
+
+    }
+
+  </script>
+  <!--[if lt IE 9]>
+   <div style=' clear: both; text-align:center; position: relative;'>
+     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+       <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+     </a>
+  </div>
+  <script src="js/html5shiv.js"></script>
+  <link rel="stylesheet" media="screen" href="css/ie.css">
+  <![endif]-->
+</head>
+
+<body class="page1" id="top">
+  <!--==============================
+                header
+  =================================-->
+  <header>
+    <!--==============================
+              Stuck menu
+  =================================-->
+    <section id="stuck_container">
+      <div class="container">
+        <div class="row">
+          <div class="grid_12">
+            <h1>
+              <a href="index.html">
+                <!-- <img src="images/logo.png" alt="Logo alt"> -->
+              </a>
+            </h1>
+            <div class="navigation">
+              <nav>
+                <ul class="sf-menu">
+                  <li class="current"><a href="index.html">home</a></li>
+                  <li><a href="index-1.html">menu</a></li>
+                  <li><a href="index-2.html">reservation</a></li>
+                  <li><a href="index-3.html">blog</a></li>
+                  <li><a href="index-4.html">contacts</a></li>
+                </ul>
+              </nav>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <!--=====================
+            Content
+  ======================-->
+  <section class="content">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <h2>7 Monthly List!!</h2>
+        </div>
+        <div class="grid_4">
+            <div class="datepicker-here" data-language='en' id="custom-cells"></div>
+        </div>
+        <div class="grid_4">
+          <div id="custom-cells-events">
+            <strong id="visitDate"></strong>
+            <p id="visitStore"></p>
+          </div>
+        </div>
+        <div class="grid_12">
+          <h2>Lank</h2>
+        </div>
+        <!-- <div class="gallery">
+          <div class="grid_4"><a href="images/big1.jpg" class="gall_item"><img src="images/page1_img4.jpg" alt=""></a><a href="#" class="link1">+</a>
+            <div class="clear"></div>
+          </div>
+          <div class="grid_4"><a href="images/big2.jpg" class="gall_item"><img src="images/page1_img5.jpg" alt=""></a><a href="#" class="link1">+</a>
+            <div class="clear"></div>
+          </div>
+          <div class="grid_4"><a href="images/big3.jpg" class="gall_item"><img src="images/page1_img6.jpg" alt=""></a><a href="#" class="link1">+</a>
+            <div class="clear"></div>
+          </div>
+        </div> -->
+        <div class="grid_12">
+          <div style="height: 600px;">
+            <style type="text/css">
+              #map {
+                height: 100%;
+              }
+            </style>
+            <div id="map"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--==============================
+                footer
+  =================================-->
+  <footer id="footer">
+
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <div class="socials">
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-google-plus"></a>
+            <a href="#" class="fa fa-pinterest"></a>
+          </div>
+          <div class="copyright"><span class="brand">Kim seulgi </span> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a>
+            <div>Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKZX89XAt8sP-uA5P78oneJW9DilQpNbU&callback=initMap" async defer></script>
+
+</html>
