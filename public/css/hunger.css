@@ -1,0 +1,13 @@
+.pickDate {
+  background-color: teal;
+  color: white;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  border-radius: 100%;
+  margin-left: -20%;
+  margin-top: 60%;
+}
+.visitDate{
+  font-size: xx-large;
+}
