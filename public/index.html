@@ -74,6 +74,7 @@
     }
 
     function monthlyCal(){
+      var name;
       var eventDates = [],
       $picker = $('#custom-cells'),
       $content = $('#custom-cells-events'),
@@ -92,21 +93,30 @@
               }
           },
           onSelect: function onSelect(fd, date) {
+            firebase.database().ref('VisitStoreList/'+fd).once('value', function(e){
+                name = e.val();
+            });
+            console.log(Object.keys(name));
+            if(name == null ){
+
+            }else {
               var title = "", content = ''
               // If date with event is selected, show it
               if (date && eventDates.indexOf(date.getDate()) != -1) {
-                  title = fd;
-                  content = sentences[0];
-                  $('h2', $content).html(title)  //날짜
-                  $('strong', $content).html(content)     //내용
+                title = fd;
+                content = sentences[0];
+                $('h2', $content).html(title)  //날짜
+                $('strong', $content).html(content)     //내용
               }else {
-                  title = fd;
-                  content = '<input type="text" name="store"> <a onClick="fnstoreReg(); return false;">입력</a>';
-                  $('h2', $content).html(title)  //날짜
-                  $('strong', $content).html(content)     //내용
+                title = fd;
+                content = '<input type="text" name="store"> <a onClick="fnstoreReg(); return false;">입력</a>';
+                $('h2', $content).html(title)  //날짜
+                $('strong', $content).html(content)     //내용
               }
               // $('strong', $content).html(title)  //날짜
               // $('p', $content).html(content)     //내용
+            }
+
           }
       })
 
