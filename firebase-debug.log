@@ -1,36 +1,36 @@
-[debug] [2017-07-14T07:29:39.894Z] ----------------------------------------------------------------------
-[debug] [2017-07-14T07:29:39.894Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\yuiox\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2017-07-14T07:29:39.894Z] CLI Version:  3.9.1
-[debug] [2017-07-14T07:29:39.894Z] Platform:     win32
-[debug] [2017-07-14T07:29:39.894Z] Node Version: v6.11.0
-[debug] [2017-07-14T07:29:39.894Z] Time:         Fri Jul 14 2017 16:29:39 GMT+0900 (대한민국 표준시)
-[debug] [2017-07-14T07:29:39.894Z] ----------------------------------------------------------------------
+[debug] [2017-07-18T23:45:17.909Z] ----------------------------------------------------------------------
+[debug] [2017-07-18T23:45:17.909Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\yuiox\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-18T23:45:17.909Z] CLI Version:  3.9.1
+[debug] [2017-07-18T23:45:17.909Z] Platform:     win32
+[debug] [2017-07-18T23:45:17.909Z] Node Version: v6.11.0
+[debug] [2017-07-18T23:45:17.909Z] Time:         Wed Jul 19 2017 08:45:17 GMT+0900 (대한민국 표준시)
+[debug] [2017-07-18T23:45:17.909Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2017-07-14T07:29:40.414Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2017-07-14T07:29:40.414Z] > authorizing via signed-in user
-[debug] [2017-07-14T07:29:40.414Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2017-07-14T07:29:40.414Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/gQ0RYPSU52gbZueugS04XJDOL-haKeg_CrMwEJbIsdM',
+[debug] [2017-07-18T23:45:17.924Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-18T23:45:17.924Z] > authorizing via signed-in user
+[debug] [2017-07-18T23:45:17.940Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-18T23:45:17.940Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/gQ0RYPSU52gbZueugS04XJDOL-haKeg_CrMwEJbIsdM',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Fri Jul 14 2017 16:29:40 GMT+0900 (대한민국 표준시)
-[debug] [2017-07-14T07:29:40.820Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-14T07:29:40.831Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hunger-480af  
- Fri Jul 14 2017 16:29:40 GMT+0900 (대한민국 표준시)
-[debug] [2017-07-14T07:29:41.932Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-14T07:29:41.932Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hunger-480af/tokens  
- Fri Jul 14 2017 16:29:41 GMT+0900 (대한민국 표준시)
-[debug] [2017-07-14T07:29:42.948Z] <<< HTTP RESPONSE 200
+ Wed Jul 19 2017 08:45:17 GMT+0900 (대한민국 표준시)
+[debug] [2017-07-18T23:45:18.293Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-18T23:45:18.293Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/hunger-480af  
+ Wed Jul 19 2017 08:45:18 GMT+0900 (대한민국 표준시)
+[debug] [2017-07-18T23:45:19.457Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-18T23:45:19.457Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/hunger-480af/tokens  
+ Wed Jul 19 2017 08:45:19 GMT+0900 (대한민국 표준시)
+[debug] [2017-07-18T23:45:20.461Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from 'D:\hosting\hunger2'...
 [info] 
-[debug] [2017-07-14T07:29:42.964Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hunger-480af  
- Fri Jul 14 2017 16:29:42 GMT+0900 (대한민국 표준시)
-[debug] [2017-07-14T07:29:44.281Z] <<< HTTP RESPONSE 200
-[debug] [2017-07-14T07:29:44.283Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/76067318543/clients/_:getWebAppConfig  
- Fri Jul 14 2017 16:29:44 GMT+0900 (대한민국 표준시)
-[debug] [2017-07-14T07:29:45.017Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-18T23:45:20.466Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/hunger-480af  
+ Wed Jul 19 2017 08:45:20 GMT+0900 (대한민국 표준시)
+[debug] [2017-07-18T23:45:21.778Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-18T23:45:21.778Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/76067318543/clients/_:getWebAppConfig  
+ Wed Jul 19 2017 08:45:21 GMT+0900 (대한민국 표준시)
+[debug] [2017-07-18T23:45:23.080Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: public
 [info] +  hosting: Local server: http://localhost:5000
 
